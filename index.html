@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>My Dream World</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#000;font-family:system-ui,sans-serif}
+  canvas{display:block;touch-action:none}
+  #hint{position:fixed;top:10px;left:10px;color:#fff;text-shadow:0 1px 4px #000;font-size:13px;pointer-events:none}
+  #joy{position:fixed;bottom:36px;left:24px;width:120px;height:120px;border-radius:50%;background:#ffffff33;touch-action:none}
+  #knob{position:absolute;left:40px;top:40px;width:40px;height:40px;border-radius:50%;background:#ffffffcc}
+</style>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+</head>
+<body>
+<div id="hint">WASD or joystick to walk. Drag the screen to look around.</div>
+<div id="joy"><div id="knob"></div></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
