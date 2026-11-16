@@ -8,16 +8,21 @@
   html,body{margin:0;height:100%;overflow:hidden;background:#000;font-family:system-ui,sans-serif}
   canvas{display:block;touch-action:none}
   #hint{position:fixed;top:10px;left:10px;color:#fff;text-shadow:0 1px 4px #000;font-size:13px;pointer-events:none}
+  #status{position:fixed;top:60px;left:10px;right:10px;color:#ffd34d;font-size:14px;pointer-events:none;white-space:pre-wrap}
   #joy{position:fixed;bottom:36px;left:24px;width:120px;height:120px;border-radius:50%;background:#ffffff33;touch-action:none}
   #knob{position:absolute;left:40px;top:40px;width:40px;height:40px;border-radius:50%;background:#ffffffcc}
 </style>
-<script type="importmap">
-{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
-</script>
 </head>
 <body>
 <div id="hint">WASD or joystick to walk. Drag the screen to look around.</div>
+<div id="status">Loading your world...</div>
 <div id="joy"><div id="knob"></div></div>
+<script>
+  var st = document.getElementById('status');
+  window.addEventListener('error', function (e) { st.style.color = '#ff6b6b'; st.textContent = 'Error: ' + (e.message || 'file failed to load') + '\n' + (e.filename || ''); });
+  window.addEventListener('unhandledrejection', function (e) { st.style.color = '#ff6b6b'; st.textContent = 'Error: ' + (e.reason && e.reason.message || e.reason); });
+  setTimeout(function () { if (!window.__started) { st.style.color = '#ff6b6b'; st.textContent = 'The game did not start.\nCheck the files are in the right folders (src/main.js, src/three.js...) and that internet is on.'; } }, 8000);
+</script>
 <script type="module" src="./src/main.js"></script>
 </body>
 </html>
