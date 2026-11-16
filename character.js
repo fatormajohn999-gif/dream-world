@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './three.js';
 
 // Simple walking character. Later we replace this with real faces / .glb models in /assets.
 export function createCharacter() {

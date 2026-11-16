@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './three.js';
 
 function cloudTexture() {
   const c = document.createElement('canvas'); c.width = 256; c.height = 128;

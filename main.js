@@ -1,10 +1,12 @@
-import * as THREE from 'three';
+import * as THREE from './three.js';
 import { createTerrain, heightAt } from './terrain.js';
 import { createTrees } from './trees.js';
 import { createSky } from './sky.js';
 import { createTown } from './town.js';
 import { createCharacter } from './character.js';
 import { startSound } from './sound.js';
+window.__started = true;
+document.getElementById('status').style.display = 'none';
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(innerWidth, innerHeight);

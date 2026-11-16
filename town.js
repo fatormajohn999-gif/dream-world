@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './three.js';
 
 function roadTexture() {
   const c = document.createElement('canvas'); c.width = 128; c.height = 128;

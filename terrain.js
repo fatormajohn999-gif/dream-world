@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './three.js';
 
 // Rolling hills outside town, flat inside the town (radius ~70)
 export function heightAt(x, z) {

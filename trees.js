@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from './three.js';
 import { heightAt } from './terrain.js';
 
 function noiseTex(base, hueRange, w, h, streak) {
